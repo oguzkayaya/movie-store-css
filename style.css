@@ -5,6 +5,8 @@
 }
 
 .header {
+    position: relative;
+    z-index: 10;
     min-height: 75px;
     display: flex;
     align-items: center;
@@ -23,6 +25,7 @@
 }
 
 .header-icon-container {
+    text-transform: uppercase;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -32,11 +35,14 @@
     padding: 10px 15px;
     opacity: 0.5;
     transition: all 0.2s;
+    position: relative;
 }
 
 .header-icon:hover {
     opacity: 1;
 }
+
+
 
 .avatar {
     width: 30px;
@@ -81,6 +87,32 @@
     width: 100%;
 }
 
+.tooltip {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%);
+    transition: opacity 500ms ease;
+    opacity: 0;
+}
+
+.header-icon>img:hover + .tooltip {
+    opacity: 1;
+    transition: opacity 500ms ease;
+    transition-delay: 250ms;
+}
+
+.tooltip img {
+    width: 100px;
+}
+
+.tooltip span {
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+}
+
 .watch-now {
     width: 30%;
     margin: auto;
@@ -122,6 +154,10 @@
     font-weight: bold;
 }
 
+.position-relative {
+    position: relative;
+}
+
 @media (max-width: 600px) {
     .banner-right {
         width: 50%;
@@ -140,4 +176,5 @@
     .banner-bar-inside {
         justify-content: center;
     }
+
 }
